@@ -115,9 +115,9 @@ type Followers struct {
 // Image identifies an image associated with an item.
 type Image struct {
 	// The image height, in pixels.
-	Height int `json:"height"`
+	Height int `json:"-"`
 	// The image width, in pixels.
-	Width int `json:"width"`
+	Width int `json:"-"`
 	// The source URL of the image.
 	URL string `json:"url"`
 }
@@ -222,7 +222,7 @@ func (c *Client) execute(req *http.Request, result interface{}, needsStatus ...i
 				// If the context is cancelled, return the original error
 			case <-time.After(retryDuration(resp)):
 				continue
-                        }
+			}
 		}
 		if resp.StatusCode == http.StatusNoContent {
 			return nil
