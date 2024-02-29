@@ -18,7 +18,7 @@ type PlaylistTracks struct {
 	// the playlist's tracks can be retrieved.
 	Endpoint string `json:"href"`
 	// The total number of tracks in the playlist.
-	Total uint `json:"total"`
+	Total uint `json:"-"`
 }
 
 // SimplePlaylist contains basic info about a Spotify playlist.
