@@ -23,12 +23,12 @@ type basePage struct {
 	Endpoint string `json:"href"`
 	// The maximum number of items in the response, as set
 	// in the query (or default value if unset).
-	Limit int `json:"limit"`
+	Limit int `json:"-"`
 	// The offset of the items returned, as set in the query
 	// (or default value if unset).
-	Offset int `json:"offset"`
+	Offset int `json:"-"`
 	// The total number of items available to return.
-	Total int `json:"total"`
+	Total int `json:"-"`
 	// The URL to the next page of items (if available).
 	Next string `json:"next"`
 	// The URL to the previous page of items (if available).
